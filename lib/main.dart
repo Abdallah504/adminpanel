@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
               scaffoldBackgroundColor: Colors.black38,
               textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
                   .apply(bodyColor: Colors.white),
-              canvasColor: Colors.yellow,
+              canvasColor: Colors.red,
             ),
       home: MainScreen(),
     );

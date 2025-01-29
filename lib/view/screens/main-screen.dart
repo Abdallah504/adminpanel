@@ -29,6 +29,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,10 +49,10 @@ class _MainScreenState extends State<MainScreen> {
                           onItemTapped(0);
                         },
                         horizontalTitleGap: 0.0,
-                        leading: Icon(Icons.person, size: 20,color: selectedIndex==0?Colors.yellow:Colors.white54,),
+                        leading: Icon(Icons.person, size: 20,color: selectedIndex==0?Colors.red:Colors.white,),
                         title: Text(
                           " Personal info",
-                          style: TextStyle(color: selectedIndex==0?Colors.yellow:Colors.white54,),
+                          style: TextStyle(color: selectedIndex==0?Colors.red:Colors.white,),
                         ),
                       ),
                       ListTile(
@@ -60,10 +61,10 @@ class _MainScreenState extends State<MainScreen> {
                           onItemTapped(1);
                         },
                         horizontalTitleGap: 0.0,
-                        leading: Icon(Icons.text_fields,color: selectedIndex==1?Colors.yellow:Colors.white54,),
+                        leading: Icon(Icons.text_fields,color: selectedIndex==1?Colors.red:Colors.white,),
                         title: Text(
                           " About",
-                          style: TextStyle(color: selectedIndex==1?Colors.yellow:Colors.white54,),
+                          style: TextStyle(color: selectedIndex==1?Colors.red:Colors.white,),
                         ),
                       ),
                       ListTile(
@@ -71,10 +72,10 @@ class _MainScreenState extends State<MainScreen> {
                           onItemTapped(2);
                         },
                         horizontalTitleGap: 0.0,
-                        leading: Icon(Icons.document_scanner,color: selectedIndex==2?Colors.yellow:Colors.white54,),
+                        leading: Icon(Icons.document_scanner,color: selectedIndex==2?Colors.red:Colors.white,),
                         title: Text(
                           " CV",
-                          style: TextStyle(color: selectedIndex==2?Colors.yellow:Colors.white54,),
+                          style: TextStyle(color: selectedIndex==2?Colors.red:Colors.white,),
                         ),
                       ),
                       ListTile(
@@ -82,10 +83,10 @@ class _MainScreenState extends State<MainScreen> {
                           onItemTapped(3);
                         },
                         horizontalTitleGap: 0.0,
-                        leading: Icon(Icons.edit_document,color: selectedIndex==3?Colors.yellow:Colors.white54,),
+                        leading: Icon(Icons.edit_document,color: selectedIndex==3?Colors.red:Colors.white,),
                         title: Text(
                           " Experience",
-                          style: TextStyle(color: selectedIndex==3?Colors.yellow:Colors.white54,),
+                          style: TextStyle(color: selectedIndex==3?Colors.red:Colors.white,),
                         ),
                       )
                       
