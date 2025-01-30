@@ -8,12 +8,15 @@ class TextFieldShared extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      style: TextStyle(color: Colors.black),
       controller: controller,
       decoration: InputDecoration(
         hintText: hint,
         labelText: label,
         hintStyle:const TextStyle(color: Colors.black),
-        labelStyle:const TextStyle(color: Colors.black)
+        labelStyle:const TextStyle(color: Colors.black),
+        hoverColor: Colors.black,
+        
       ),
     );
   }

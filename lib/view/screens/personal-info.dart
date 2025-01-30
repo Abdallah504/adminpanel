@@ -1,4 +1,5 @@
 import 'package:adminpanel/controller/main-app-provider.dart';
+import 'package:adminpanel/model/personal-model.dart';
 import 'package:adminpanel/view/widgets/text-field.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -69,7 +70,12 @@ class _PersonalInfoState extends State<PersonalInfo> {
 
                                     SizedBox(height: 20,),
                                     ElevatedButton(onPressed: (){
-                                      
+                                      final p = Personal(
+                                        firstName: firstNameController.text,
+                                        lastName: lastNameController.text,
+                                        job: jobTitleController.text
+                                      );
+                                      provider.createPersonal(p, context);
                                     },
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: Colors.red
@@ -92,8 +98,46 @@ class _PersonalInfoState extends State<PersonalInfo> {
         
               ],
             ),
-              
-        
+             SizedBox(height: 50,),
+             StreamBuilder(stream: provider.stream,
+              builder: (context,snapshot){
+                if(!snapshot.hasData){
+            return Center(
+              child: CircularProgressIndicator(color: Colors.red,),
+            );
+          }
+          final info = snapshot.data!;
+                return ListView.builder(
+                  itemCount: info.length,
+                  shrinkWrap: true,
+                  physics: BouncingScrollPhysics(),
+                  itemBuilder: (context,index){
+                  return Container(
+                  height: 400,
+                  width: 400,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Column(
+                        children: [
+                          Text('First Name : ${info[index].firstName}'),
+                          SizedBox(height: 5,),
+                          Text('Last Name : ${info[index].lastName}'),
+                          SizedBox(height: 5,),
+                          Text('Job Title : ${info[index].job}')
+                        ],
+                      ),
+                      SizedBox(width: 20,),
+                      IconButton(onPressed: (){
+                        provider.deleteNote(info[index]);
+                      },
+                       icon: Icon(Icons.delete,color: Colors.red,))
+                    ],
+                  ),
+                );
+                });
+              })
             
           ],
         ),

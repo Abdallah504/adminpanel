@@ -13,7 +13,7 @@ class Personal{
   factory Personal.fromMap(Map<String,dynamic> map){
     return Personal(
       id: map['id'] as int,
-      firstName: map['first-name'] as String,
+      firstName: map['fist-name'] as String,
       lastName: map['last-name'] as String,
       job: map['job'] as String
     );
@@ -25,7 +25,7 @@ class Personal{
 
   Map<String, dynamic>toMap(){
     return{
-      'first-name':firstName,
+      'fist-name':firstName,
       'last-name':lastName,
       'job':job
     };

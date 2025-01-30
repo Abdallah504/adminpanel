@@ -13,7 +13,7 @@ class MainAppProvider extends ChangeNotifier{
     }catch(e){
       ScaffoldMessenger.of(context).showSnackBar( SnackBar(
         backgroundColor: Colors.black,
-        content: Text('Failed to upload the data',style: GoogleFonts.cairo(color: Colors.white),)));
+        content: Text('Failed to upload the data : $e',style: GoogleFonts.cairo(color: Colors.white),)));
     }
   }
 
